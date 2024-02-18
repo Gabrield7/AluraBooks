@@ -1,0 +1,163 @@
+.cabecalho{
+    background-color: var(--cor-do-menu);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /*todo o cabeçalho possui uma posicao relativa à propriedade atribuída a ela (tp, button, right, left)*/
+}
+.cabecalho__menu-hamburguer {
+    height: 48px;
+    width: 48px;  
+    background-image: url("../public/Menu.svg"); /*fundo com uma imagem*/
+    background-repeat: no-repeat; /*para não repetir a imagem quando as dimensões dela forem inferiores ao tamanho do elemento*/
+    background-position: center; /*posicao da iamgem em relacao ao elemento*/
+    display: flex;
+    padding: .5rem;
+}
+.conteiner__botao:checked~.conteiner__label>.cabecalho__menu-hamburguer{
+    background-image: url("../public/MenuAberto.svg");
+}
+.conteiner__botao:checked~.conteiner__label{
+    background: var(--cor-degrade);
+}
+.conteiner, .conteiner__icones{
+    display: flex;
+    align-items: center;
+}
+.conteiner__botao{
+    display: none;
+}
+.conteiner__imagem, .conteiner__logo{
+    padding: .5rem 1rem .5rem 0;
+}
+.conteiner__lista{
+    display: none; /*faz desaparecer a lista*/
+    position: absolute;
+    top: 100%;
+    width: 70%;
+}
+.conteiner__botao:checked~.conteiner__lista{ /*":checked" -> pseudo-classe que seleciona cada entrada (input)*/
+    display: flex; /*"~" -> um combinador CSS, que tem a função de procurar o próximo elemento com classe ".conteiner__lista" e aplicar o "display: block*/
+    flex-direction: column;
+}
+.conteiner__lista__titulo{
+    background-color: var(--cor-do-menu);
+    padding: 1rem;
+    color: var(--cor-texto-a);
+    font-family: var(--fonte-texto);
+    font-weight: 700;
+    font-size: 16px;
+}
+.conteiner__lista__item{
+    background-color: var(--cor-do-menu);
+    padding: 1rem;
+}
+.conteiner__lista__link{
+    text-decoration: none;
+    font-family: var(--fonte-texto);
+    font-weight: 400;
+    font-size: 16px;
+    background: var(--cor-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.conteiner__titulo{
+    display: none;
+}
+.opcoes{
+    display: none;
+}
+.conteiner__icones__titulo{
+    display: none;
+}
+@media screen and (min-width: 1024px) {
+    .conteiner__titulo{
+        font-family: var(--fonte-logo);
+        font-size: 30px;
+        font-weight: 700;
+        display: block;
+        justify-content: center;
+    }
+    .conteiner__titulo-negrito{
+        font-family: var(--fonte-logo);
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .cabecalho__menu-hamburguer{
+        display: none;
+    }
+    .conteiner__logo{
+        padding: 1.25rem 1.25rem 1.25rem 5rem;
+    }
+    .opcoes{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        cursor: pointer;
+    }
+    .opcoes__link, .opcoes__categorias{
+        font-family: var(--fonte-texto);
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    .opcoes__link{
+        color: var(--cor-texto-b);
+    }
+    .opcoes__categorias{
+        color: var(--cor-texto-b);
+        display: flex;
+        padding: 2rem 1rem;
+    }
+    .conteiner__botao:checked~.conteiner__label>.opcoes__categorias{
+        background-color: var(--cor-degrade);
+        color: var(--cor-do-menu);
+    }
+    .conteiner__lista__item:hover{
+        background: var(--cor-degrade);    
+    }
+    .conteiner__lista__item:hover>.conteiner__lista__link{
+        -webkit-text-fill-color: var(--cor-do-menu);
+    }
+    .conteiner__icones{
+        display: flex;
+        gap: 2rem;
+        padding: 0 2rem 0 2rem ;
+    }
+    .conteiner__imagem-tranparente{
+        display: none;
+    }
+    .conteiner__botao{
+        display: none;
+    }
+    .conteiner__lista__item{
+        background-color: var(--cor-do-menu);
+        padding: 1rem;
+        width: 20%;
+    }
+    .conteiner__icones__titulo{
+        display: none;
+    }
+}
+@media screen and (min-width: 1728px) {   
+    .conteiner__icones__link{
+        display: flex;
+        align-items: center;
+        font-family: var(--fonte-texto);
+        color: var(--cor-texto-b);
+        font-size: 20px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    .conteiner__icones__titulo{
+        display: block;
+    }
+    .opcoes{
+        margin-right: auto;
+        padding: 0 3rem;
+    }
+    .opcoes__categorias, .opcoes__link{
+        font-size: 20px;
+    }
+}
