@@ -1,5 +1,9 @@
 .contato{
     background-color: var(--cor-do-menu);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
 }
 .contato__titulo, .contato__texto, .contato__email{
     background: var(--cor-degrade);
@@ -11,21 +15,17 @@
 .contato__titulo{
     font-size: 18px;
     font-weight: 500;
-    padding: 1.5rem 1.5rem 0.5rem;
+    padding-bottom: 1rem;
 }
 .contato__texto{
     font-size: 16px;
     font-weight: 300;
-    padding: 0 1.5rem 1.5rem;
 }
 .contato__email{
-    font-size: 16px;
-    font-weight: 400;
     border: 1px solid var(--cor-texto-azul);
     border-radius: 24px;
-    width: 90%;
+    width: 80%;
     padding: .5rem;
-    margin: 0 1.5rem 1.5rem;
 }
 .contato__email::placeholder{
     font-size: 16px;
@@ -39,8 +39,10 @@
     .contato{
         display: flex;
         justify-content: center;
+        flex-direction: row;
         align-items: center;
-        gap: 10%;
+        padding: 0;
+        gap: 5%;
     }
     .contato__titulo{
         font-size: 24px;
