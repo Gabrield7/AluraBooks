@@ -1,4 +1,6 @@
 # Alura Books
+<img src="https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui">
+
 
 Site desenvolvido como parte do curso de Responsividade com Mobile First em HTML e CSS da Alura.
 
@@ -18,6 +20,8 @@ As técnicas e tecnologias utilizadas pra isso são:
 - `media queries`: utilziada para ajudar a dar responsividade ao site
 - `SwiperJS`: tecnologia moderna open source de carrossel, para transição de slides em dispositivos mobile
 
+## 📱 Vislumbre geral da página
+<img src="./public/pagina_principal_alurabooks_tablet.jpeg">
 
 ## Feito por:
 
